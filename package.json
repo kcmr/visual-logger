@@ -40,7 +40,8 @@
     "test:watch": "karma start --auto-watch=true --single-run=false",
     "docs": "npm-run-all docs:*",
     "docs:md": "wca analyze src/VisualLogger.js --outFile api.md",
-    "docs:json": "wca analyze src/VisualLogger.js --outFile custom-elements.json"
+    "docs:json": "wca analyze src/VisualLogger.js --outFile custom-elements.json",
+    "deploy": "now --prod"
   },
   "dependencies": {
     "lit-element": "^2.0.0"
