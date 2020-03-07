@@ -74,7 +74,7 @@ visual-editor > div {
 
 Each of the `window.console` methods (`log`, `warn`, `info`, `error`) has a corresponding component method that accepts the same params.
 
-_Note: only two params are shown in the terminal._
+_Note: only the first two params are shown in the terminal._
 
 ```html
 <visual-logger></visual-logger>
