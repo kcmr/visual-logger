@@ -12,7 +12,7 @@ Browser UI terminal using Xterm.js to display console methods (log, warn, error,
 | `noConsole`          | `no-console`           |           | `boolean` |                                                  | Supress window.console logs                      |
 | `rows`               | `rows`                 |           | `number`  | 5                                                | Terminal rows                                    |
 | `stylesheetUri`      | `stylesheet-uri`       |           | `string`  | "https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.min.css" | URI of the Terminal stylesheet (Uses cdnjs if not provided) |
-| `terminal`           |                        | readonly  |           |                                                  | Returns the xterm intance                        |
+| `terminal`           |                        | readonly  |           |                                                  | Returns the xterm instance                       |
 | `theme`              |                        |           | `object`  |                                                  | Terminal theme                                   |
 
 ## Methods

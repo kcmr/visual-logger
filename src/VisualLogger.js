@@ -101,7 +101,7 @@ export class VisualLogger extends LitElement {
   }
 
   /**
-   * Returns the xterm intance
+   * Returns the xterm instance
    */
   get terminal() {
     return this._terminal;

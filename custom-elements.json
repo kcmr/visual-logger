@@ -56,7 +56,7 @@
         },
         {
           "name": "terminal",
-          "description": "Returns the xterm intance"
+          "description": "Returns the xterm instance"
         },
         {
           "name": "cols",
