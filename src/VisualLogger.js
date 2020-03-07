@@ -3,8 +3,8 @@ import { html, LitElement } from 'lit-element';
 import 'xterm';
 
 const LOG_METHODS = ['log', 'warn', 'info', 'error'];
-const STYLESHEET_URI = 'https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.min.css';
-const ANSI_COLOR = {
+export const STYLESHEET_URI = 'https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.min.css';
+export const ANSI_COLOR = {
   green: '\x1b[32m',
   red: '\x1b[31m',
   yellow: '\x1b[33m',
@@ -90,6 +90,10 @@ export class VisualLogger extends LitElement {
     };
   }
 
+  get terminal() {
+    return this._terminal;
+  }
+
   constructor() {
     super();
     this.cols = 200;
@@ -117,6 +121,7 @@ export class VisualLogger extends LitElement {
     const style = document.createElement('link');
     document.head.appendChild(
       Object.assign(style, {
+        id: 'xterm-styles',
         rel: 'stylesheet',
         href: this.stylesheetUri,
       }),

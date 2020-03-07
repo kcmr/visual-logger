@@ -14,11 +14,32 @@ module.exports = config => {
         { pattern: config.grep ? config.grep : 'test/**/*.test.js', type: 'module' },
       ],
 
+      client: {
+        mocha: {
+          ui: 'tdd',
+        },
+      },
+
+      browserConsoleLogOptions: {
+        level: config.logLevel,
+      },
+
+      coverageIstanbulReporter: {
+        thresholds: {
+          global: {
+            statements: 98,
+            branches: 88,
+            functions: 100,
+            lines: 98,
+          },
+        },
+      },
+
       esm: {
         nodeResolve: true,
       },
-      // you can overwrite/extend the config further
     }),
   );
+
   return config;
 };
