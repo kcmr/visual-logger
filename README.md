@@ -2,7 +2,7 @@
 
 > Displays calls to `window.console` methods in a visual terminal using [Xterm.js](https://xtermjs.org/).
 
-[![Visual Logger demo](visual-logger.png)](https://visual-logger.now.sh/)
+[![Visual Logger demo](https://github.com/kcmr/visual-logger/raw/master/visual-logger.png)](https://visual-logger.now.sh/)
 
 🚀 **Demo:** [https://visual-logger.now.sh/](https://visual-logger.now.sh/)
 
