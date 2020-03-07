@@ -1,6 +1,6 @@
 {
   "name": "@kuscamara/visual-logger",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "description": "WebComponent to display calls to console methods in a visual terminal",
   "keywords": [
     "web component",
@@ -40,8 +40,7 @@
     "test:watch": "karma start --auto-watch=true --single-run=false",
     "docs": "npm-run-all docs:*",
     "docs:md": "wca analyze src/VisualLogger.js --outFile api.md",
-    "docs:json": "wca analyze src/VisualLogger.js --outFile custom-elements.json",
-    "deploy": "now --prod"
+    "docs:json": "wca analyze src/VisualLogger.js --outFile custom-elements.json"
   },
   "dependencies": {
     "lit-element": "^2.0.0"
