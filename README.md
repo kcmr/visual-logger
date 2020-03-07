@@ -58,6 +58,18 @@ The height (`rows`) and column width (`cols`) can be changed after or before ini
 <visual-logger rows="10" cols="120"></visual-logger>
 ```
 
+### Customizing styles
+
+The default terminal styles (background, ANSI colors and font styles) can be customized using the [`theme` option of Xterm.js](https://xtermjs.org/docs/api/terminal/interfaces/itheme/).
+
+The component **does not use Shadow DOM**, so it can be customized from the outside using `visual-editor` tag.
+
+```css
+visual-editor > div {
+  padding: 20px;
+}
+```
+
 ### Programmatically usage
 
 Each of the `window.console` methods (`log`, `warn`, `info`, `error`) has a corresponding component method that accepts the same params.
