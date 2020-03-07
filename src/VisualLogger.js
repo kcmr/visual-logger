@@ -30,11 +30,16 @@ function getMessage(...args) {
   return [first, format(second)].filter(notEmpty).join(' ‣ ');
 }
 
+/**
+ * Browser UI terminal using Xterm.js to display console methods (log, warn, error, info).
+ * @element visual-logger
+ */
 export class VisualLogger extends LitElement {
   static get properties() {
     return {
       /**
        * Terminal columns
+       * @attr cols
        */
       cols: {
         type: Number,
@@ -42,6 +47,7 @@ export class VisualLogger extends LitElement {
 
       /**
        * Terminal rows
+       * @attr rows
        */
       rows: {
         type: Number,
@@ -49,6 +55,7 @@ export class VisualLogger extends LitElement {
 
       /**
        * Line height
+       * @attr line-height
        */
       lineHeight: {
         type: Number,
@@ -66,6 +73,7 @@ export class VisualLogger extends LitElement {
 
       /**
        * Excluded log (window.console) methods
+       * @attr excluded-log-methods
        */
       excludedLogMethods: {
         type: Array,
@@ -74,6 +82,7 @@ export class VisualLogger extends LitElement {
 
       /**
        * Supress window.console logs
+       * @attr no-console
        */
       noConsole: {
         type: Boolean,
@@ -82,6 +91,7 @@ export class VisualLogger extends LitElement {
 
       /**
        * URI of the Terminal stylesheet (Uses cdnjs if not provided)
+       * @attr stylesheet-uri
        */
       stylesheetUri: {
         type: String,
@@ -90,6 +100,9 @@ export class VisualLogger extends LitElement {
     };
   }
 
+  /**
+   * Returns the xterm intance
+   */
   get terminal() {
     return this._terminal;
   }

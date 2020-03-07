@@ -1,1 +1,1 @@
-export { BrowserConsole } from './src/BrowserConsole.js';
+export { VisualLogger } from './src/VisualLogger.js';

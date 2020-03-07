@@ -1,30 +1,97 @@
 {
-  "version": 2,
+  "version": "experimental",
   "tags": [
     {
       "name": "visual-logger",
-      "description": "A component with a title and an action counter",
-      "properties": [
+      "path": "./src/VisualLogger.js",
+      "description": "Browser UI terminal using Xterm.js to display console methods (log, warn, error, info).",
+      "attributes": [
         {
-          "name": "title",
-          "type": "String",
-          "description": "The title of your component",
-          "default": "Hey there"
+          "name": "no-console",
+          "description": "Supress window.console logs",
+          "type": "boolean"
         },
         {
-          "name": "counter",
-          "type": "Number",
-          "description": "An action counter",
-          "default": 0
+          "name": "cols",
+          "description": "Terminal columns",
+          "type": "number",
+          "default": "200"
+        },
+        {
+          "name": "rows",
+          "description": "Terminal rows",
+          "type": "number",
+          "default": "5"
+        },
+        {
+          "name": "line-height",
+          "description": "Line height",
+          "type": "number",
+          "default": "1.5"
+        },
+        {
+          "name": "excluded-log-methods",
+          "description": "Excluded log (window.console) methods",
+          "type": "array",
+          "default": "[]"
+        },
+        {
+          "name": "stylesheet-uri",
+          "description": "URI of the Terminal stylesheet (Uses cdnjs if not provided)",
+          "type": "string",
+          "default": "\"https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.min.css\""
         }
       ],
-      "events": [],
-      "slots": [],
-      "cssProperties": [
+      "properties": [
         {
-          "name": "--browser-console-text-color",
-          "description": "Main Text Color",
-          "type": "Color"
+          "name": "theme",
+          "description": "Terminal theme",
+          "type": "object"
+        },
+        {
+          "name": "noConsole",
+          "attribute": "no-console",
+          "description": "Supress window.console logs",
+          "type": "boolean"
+        },
+        {
+          "name": "terminal",
+          "description": "Returns the xterm intance"
+        },
+        {
+          "name": "cols",
+          "attribute": "cols",
+          "description": "Terminal columns",
+          "type": "number",
+          "default": "200"
+        },
+        {
+          "name": "rows",
+          "attribute": "rows",
+          "description": "Terminal rows",
+          "type": "number",
+          "default": "5"
+        },
+        {
+          "name": "lineHeight",
+          "attribute": "line-height",
+          "description": "Line height",
+          "type": "number",
+          "default": "1.5"
+        },
+        {
+          "name": "excludedLogMethods",
+          "attribute": "excluded-log-methods",
+          "description": "Excluded log (window.console) methods",
+          "type": "array",
+          "default": "[]"
+        },
+        {
+          "name": "stylesheetUri",
+          "attribute": "stylesheet-uri",
+          "description": "URI of the Terminal stylesheet (Uses cdnjs if not provided)",
+          "type": "string",
+          "default": "\"https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.min.css\""
         }
       ]
     }
