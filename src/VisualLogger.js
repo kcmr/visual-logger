@@ -239,7 +239,6 @@ export class VisualLogger extends LitElement {
           bottom: 0;
           left: 0;
           width: 100%;
-          box-sizing: border-box;
         }
 
         visual-logger > div {
