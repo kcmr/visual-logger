@@ -2,6 +2,7 @@
 import { html, LitElement } from 'lit-element';
 import 'xterm';
 
+const LOG_METHODS = ['log', 'warn', 'info', 'error'];
 const STYLESHEET_URI = 'https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.min.css';
 const ANSI_COLOR = {
   green: '\x1b[32m',
@@ -64,11 +65,11 @@ export class VisualLogger extends LitElement {
       },
 
       /**
-       * Enabled log methods (window.console)
+       * Excluded log (window.console) methods
        */
-      logMethods: {
+      excludedLogMethods: {
         type: Array,
-        attribute: 'log-methods',
+        attribute: 'excluded-log-methods',
       },
 
       /**
@@ -94,7 +95,7 @@ export class VisualLogger extends LitElement {
     this.cols = 200;
     this.rows = 5;
     this.lineHeight = 1.5;
-    this.logMethods = ['log', 'info', 'warn', 'error'];
+    this.excludedLogMethods = [];
     this.stylesheetUri = STYLESHEET_URI;
   }
 
@@ -149,6 +150,9 @@ export class VisualLogger extends LitElement {
 
   _spyConsole() {
     const consoleEnabled = !this.noConsole;
+    const allowedLogMethods = LOG_METHODS.filter(
+      method => !this.excludedLogMethods.includes(method),
+    );
 
     function logDecorator(fn, method) {
       return function log(...args) {
@@ -160,7 +164,7 @@ export class VisualLogger extends LitElement {
       };
     }
 
-    this.logMethods.forEach(method => {
+    allowedLogMethods.forEach(method => {
       const logMethod = this[method].bind(this);
       console[method] = logDecorator(console[method], logMethod);
     });
@@ -212,6 +216,7 @@ export class VisualLogger extends LitElement {
           display: block;
           position: fixed;
           bottom: 0;
+          left: 0;
           width: 100%;
           box-sizing: border-box;
         }
