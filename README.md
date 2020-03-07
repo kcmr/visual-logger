@@ -1,81 +1,88 @@
 # &lt;visual-logger&gt;
 
+> Displays calls to `window.console` methods in a visual terminal using [Xterm.js](https://xtermjs.org/).
+
 This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
 
 ## Installation
 
 ```bash
-npm i browser-console
+npm i @kuscamara/visual-logger
 ```
 
 ## Usage
 
+Simply include it in your page and start using `window.console` methods.
+
 ```html
-<script type="module">
-  import 'browser-console/browser-console.js';
+<script type="module" src="node_modules/@kuscamara/visual-logger/visual-logger.js"></script>
+
+<visual-logger></visual-logger>
+```
+
+## Options
+
+### [API](api.md)
+
+Check out the **[API docs](api.md)** for the complete list of properties / attributes and methods.
+
+### Disabling browser logging (`window.console`)
+
+Set `noConsole` to `true`.
+
+```html
+<visual-logger no-console></visual-logger>
+```
+
+### Excluding `console` methods
+
+Config the excluded methods in `excludedLogMethods` (`array`)
+
+```html
+<visual-logger excluded-log-methods='["error"]'></visual-logger>
+```
+
+### Xterm styles
+
+The required styles for the terminal are loaded by default from a CDN (cdnjs.cloudflare.com), so you don't need to import them manually. If you need to load the stylesheet from a different location, use the `stylesheet-uri` attribute to specify the path.
+
+```html
+<visual-logger stylesheet-uri="node_modules/xterm/css/xterm.css"></visual-logger>
+```
+
+### Changing size
+
+The height (`rows`) and column width (`cols`) can be changed after or before initialization.
+
+```html
+<visual-logger rows="10" cols="120"></visual-logger>
+```
+
+### Programmatically usage
+
+Each of the `window.console` methods (`log`, `warn`, `info`, `error`) has a corresponding component method that accepts the same params.
+
+_Note: only two params are shown in the terminal._
+
+```html
+<visual-logger></visual-logger>
+
+<script>
+  document.querySelector('visual-logger').log('Hello world!');
 </script>
-
-<browser-console></browser-console>
 ```
 
-## Linting with ESLint, Prettier, and Types
+## Development
 
-To scan the project for linting errors, run
+The following commands are available for development:
 
-```bash
-npm run lint
-```
+- `npm start`: Starts the development server.
+- `npm t`: Runs the tests with coverage output.
+- `npm run test:watch`: Runs the test in watch mode. The browser runner is available at http://localhost:9876/
+- `npm run lint`: Runs [web component analyzer](https://www.npmjs.com/package/web-component-analyzer), eslint and prettier.
+- `npm run format`: Runs linters fixing errors.
+- `npm run docs`: Updates the API docs in [api.md](api.md) file and `custom-elements.json`.
 
-You can lint with ESLint and Prettier individually as well
+## License
 
-```bash
-npm run lint:eslint
-```
-
-```bash
-npm run lint:prettier
-```
-
-To automatically fix many linting errors, run
-
-```bash
-npm run format
-```
-
-You can format using ESLint and Prettier individually as well
-
-```bash
-npm run format:eslint
-```
-
-```bash
-npm run format:prettier
-```
-
-## Testing with Karma
-
-To run the suite of karma tests, run
-
-```bash
-npm run test
-```
-
-To run the tests in watch mode (for <abbr title="test driven development">TDD</abbr>, for example), run
-
-```bash
-npm run test:watch
-```
-
-## Tooling configs
-
-For most of the tools, the configuration is in the `package.json` to reduce the amount of files in your project.
-
-If you customize the configuration a lot, you can consider moving them to individual files.
-
-## Local Demo with `es-dev-server`
-
-```bash
-npm start
-```
-
-To run a local development server that serves the basic demo located in `demo/index.html`
+This project is licensed under the [MIT License](LICENSE).
