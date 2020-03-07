@@ -27,7 +27,7 @@
   "scripts": {
     "prestart": "rimraf dist",
     "start": "parcel demo/index.html",
-    "build": "parcel demo/index.html --no-source-maps --out-dir public",
+    "now-build": "parcel build demo/index.html --no-source-maps --out-dir public",
     "lint": "npm-run-all lint:*",
     "lint:lit": "lit-analyzer",
     "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
