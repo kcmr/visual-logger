@@ -1,5 +1,13 @@
 # &lt;visual-logger&gt;
 
+[![Build Status](https://travis-ci.com/kcmr/visual-logger.svg?branch=master)](https://travis-ci.com/kcmr/visual-logger)
+[![npm version](https://badge.fury.io/js/%40kuscamara%2Fvisual-logger.svg)](https://badge.fury.io/js/%40kuscamara%2Fvisual-logger)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![codecov](https://codecov.io/gh/kcmr/visual-logger/branch/master/graph/badge.svg)](https://codecov.io/gh/kcmr/visual-logger)
+![Dependency status](https://img.shields.io/david/kcmr/visual-logger.svg)
+
+
 > Displays calls to `window.console` methods in a visual terminal using [Xterm.js](https://xtermjs.org/).
 
 [![Visual Logger demo](https://github.com/kcmr/visual-logger/raw/master/visual-logger.png)](https://visual-logger.now.sh/)
