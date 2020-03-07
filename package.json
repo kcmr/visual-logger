@@ -1,6 +1,6 @@
 {
   "name": "@kuscamara/visual-logger",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "WebComponent to display calls to console methods in a visual terminal",
   "keywords": [
     "web component",
