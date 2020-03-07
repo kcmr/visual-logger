@@ -1,0 +1,16 @@
+html {
+  --font-stack-sans: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-stack-sans);
+  text-align: center;
+  margin: 0;
+  padding-top: 20px;
+  min-height: 100vh;
+  position: relative;
+}
+
+h1 {
+  font-weight: 400;
+}
