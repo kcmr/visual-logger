@@ -79,5 +79,16 @@
       "eslint --fix",
       "prettier --write"
     ]
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kcmr/visual-logger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kcmr/visual-logger/issues"
+  },
+  "homepage": "https://github.com/kcmr/visual-logger#readme"
 }
