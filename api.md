@@ -17,11 +17,10 @@ Browser UI terminal using Xterm.js to display console methods (log, warn, error,
 
 ## Methods
 
-| Method             | Type                     | Description                   |
-|--------------------|--------------------------|-------------------------------|
-| `clear`            | `(): void`               | Clears the console            |
-| `createRenderRoot` | `(): this`               |                               |
-| `error`            | `(...args: any[]): void` | Logs an error (console.error) |
-| `info`             | `(...args: any[]): void` | Logs an info (console.info)   |
-| `log`              | `(...args: any[]): void` | Logs a message (console.log)  |
-| `warn`             | `(...args: any[]): void` | Logs a warning (console.warn) |
+| Method  | Type                     | Description                   |
+|---------|--------------------------|-------------------------------|
+| `clear` | `(): void`               | Clears the console            |
+| `error` | `(...args: any[]): void` | Logs an error (console.error) |
+| `info`  | `(...args: any[]): void` | Logs an info (console.info)   |
+| `log`   | `(...args: any[]): void` | Logs a message (console.log)  |
+| `warn`  | `(...args: any[]): void` | Logs a warning (console.warn) |

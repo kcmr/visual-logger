@@ -116,6 +116,9 @@ export class VisualLogger extends LitElement {
     this.stylesheetUri = STYLESHEET_URI;
   }
 
+  /**
+   * @private
+   */
   createRenderRoot() {
     return this;
   }
