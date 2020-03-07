@@ -2,7 +2,7 @@
   "version": 2,
   "tags": [
     {
-      "name": "browser-console",
+      "name": "visual-logger",
       "description": "A component with a title and an action counter",
       "properties": [
         {

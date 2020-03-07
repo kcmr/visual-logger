@@ -1,1 +1,1 @@
-import '../browser-console.js';
+import '../visual-logger.js';

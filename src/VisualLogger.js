@@ -24,21 +24,23 @@ function format(param = '') {
 
 function getMessage(...args) {
   const [first, second] = args;
-  return [first, format(second)].filter(Boolean).join(' ‣ ');
+  const notEmpty = value => Boolean(String(value));
+
+  return [first, format(second)].filter(notEmpty).join(' ‣ ');
 }
 
-export class BrowserConsole extends LitElement {
+export class VisualLogger extends LitElement {
   static get properties() {
     return {
       /**
-       * Console columns
+       * Terminal columns
        */
       cols: {
         type: Number,
       },
 
       /**
-       * Console rows
+       * Terminal rows
        */
       rows: {
         type: Number,
@@ -105,6 +107,11 @@ export class BrowserConsole extends LitElement {
     this._initialize();
   }
 
+  updated(changedProperties) {
+    super.updated(changedProperties);
+    this._updateTerminal(changedProperties);
+  }
+
   _loadStyles() {
     const style = document.createElement('link');
     document.head.appendChild(
@@ -125,6 +132,19 @@ export class BrowserConsole extends LitElement {
 
     this._terminal.open(this);
     this._spyConsole();
+  }
+
+  _updateTerminal(changedProperties) {
+    if (
+      (changedProperties.has('cols') && this.cols !== undefined) ||
+      (changedProperties.has('rows') && this.rows !== undefined)
+    ) {
+      this._terminal.resize(this.cols, this.rows);
+    }
+
+    if (changedProperties.has('lineHeight') && this.lineHeight !== undefined) {
+      this._terminal.setOption('lineHeight', this.lineHeight);
+    }
   }
 
   _spyConsole() {
@@ -188,7 +208,7 @@ export class BrowserConsole extends LitElement {
   render() {
     return html`
       <style>
-        browser-console {
+        visual-logger {
           display: block;
           position: fixed;
           bottom: 0;
@@ -196,11 +216,11 @@ export class BrowserConsole extends LitElement {
           box-sizing: border-box;
         }
 
-        browser-console > div {
+        visual-logger > div {
           padding: 10px;
         }
 
-        browser-console code {
+        visual-logger code {
           font-family: monospace, monospace;
         }
       </style>
