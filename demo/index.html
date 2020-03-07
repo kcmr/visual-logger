@@ -2,11 +2,49 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>&lt;visual-logger&gt; demo</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="index.js" type="module"></script>
   </head>
   <body>
-    <visual-logger></visual-logger>
+    <h1><code>&lt;visual-logger&gt;</code></h1>
+    <p>Open the browser's console and execute some console methods.</p>
+    <p>Or you can press the following buttons if you are too lazy</p>
+
+    <div class="buttons">
+      <button id="error" class="error">Error</button>
+      <button id="warn" class="warn">Warn</button>
+      <button id="info" class="info">Info</button>
+      <button id="log" class="log">Log</button>
+    </div>
+
+    <button id="clear">Clear</button>
+
+    <visual-logger no-console id="logger"></visual-logger>
+
+    <script>
+      const { log, warn, info, error, clear, logger } = window;
+
+      log.addEventListener('click', () => {
+        console.log('My test are green!');
+      });
+
+      warn.addEventListener('click', () => {
+        console.warn('Submarine is', 'yellow');
+      });
+
+      info.addEventListener('click', () => {
+        console.info('Skies are', 'blue');
+      });
+
+      error.addEventListener('click', () => {
+        console.error('Roses are', 'red');
+      });
+
+      clear.addEventListener('click', () => {
+        logger.clear();
+      });
+    </script>
   </body>
 </html>

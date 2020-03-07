@@ -229,10 +229,6 @@ export class VisualLogger extends LitElement {
         visual-logger > div {
           padding: 10px;
         }
-
-        visual-logger code {
-          font-family: monospace, monospace;
-        }
       </style>
     `;
   }

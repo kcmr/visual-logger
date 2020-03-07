@@ -14,3 +14,41 @@ body {
 h1 {
   font-weight: 400;
 }
+
+code {
+  font-family: monospace, monospace;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+button {
+  font: inherit;
+  color: white;
+  background-color: #2967c7;
+  padding: 10px 20px;
+  border-radius: 4px;
+  line-height: 1;
+  border: 0;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.error {
+  background-color: #e01f4b;
+}
+
+.warn {
+  background-color: #e2b41f;
+}
+
+.info {
+  background-color: #4ac2bc;
+}
+
+.log {
+  background-color: #6dc521;
+}
