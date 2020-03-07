@@ -9,3 +9,5 @@
 /.cache/
 /dist/
 /public/
+
+.now
