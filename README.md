@@ -12,9 +12,13 @@ npm i @kuscamara/visual-logger
 
 ## Usage
 
-Simply include it in your page and start using `window.console` methods.
+⚠️ **Important:** Due to differences in module bundlers ([see issue in xtermjs repo](https://github.com/xtermjs/xterm.js/issues/2486)) handling exports, the component does not import `xterm` by itself and uses `window.Terminal` `constructor`, so **`xterm` should be loaded in `window` before the component**.   
+`xterm` is also required as `devDependency` for the tests.
+
+Include the component in your page and start using `window.console` methods.
 
 ```html
+<script src="https://unpkg.com/xterm@4.4.0/lib/xterm.js"></script>
 <script type="module" src="node_modules/@kuscamara/visual-logger/visual-logger.js"></script>
 
 <visual-logger></visual-logger>

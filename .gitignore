@@ -4,3 +4,7 @@
 
 ## testing
 /coverage/
+
+## cache and server
+/.cache/
+/dist/

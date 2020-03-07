@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import { html, LitElement } from 'lit-element';
-import 'xterm';
 
 const LOG_METHODS = ['log', 'warn', 'info', 'error'];
 export const STYLESHEET_URI = 'https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.min.css';

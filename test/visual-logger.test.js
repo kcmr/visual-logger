@@ -1,5 +1,6 @@
 import { html, fixture, fixtureCleanup, assert } from '@open-wc/testing';
 import sinon from 'sinon';
+import 'xterm';
 import { STYLESHEET_URI as DEFAULT_STYLESHEET_URI, ANSI_COLOR } from '../src/VisualLogger.js';
 import '../visual-logger.js';
 
