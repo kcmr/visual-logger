@@ -5,6 +5,7 @@
 ## testing
 /coverage/
 
-## cache and server
+## cache, server and build
 /.cache/
 /dist/
+/public/
